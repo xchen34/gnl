@@ -1,0 +1,7 @@
+The open() function shall establish the connection between a file and a file descriptor.
+ It shall create an open file description that refers to a file and a file descriptor that refers to that open file description. The file descriptor is used by other I/O functions to refer to that file.
+ 
+ The path argument points to a pathname naming the file.
+
+ end 
+ 
