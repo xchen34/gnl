@@ -1,0 +1,10 @@
+this is line 1 
+this is line 2  		
+line 3
+4    
+fin
+
+
+
+real fin
+

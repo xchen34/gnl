@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: leochen <leochen@student.42.fr>            +#+  +:+       +#+        */
+/*   By: leochen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/07 12:06:32 by leochen           #+#    #+#             */
-/*   Updated: 2023/12/14 17:38:09 by leochen          ###   ########.fr       */
+/*   Created: 2023/12/14 17:01:50 by leochen           #+#    #+#             */
+/*   Updated: 2023/12/14 17:37:32 by leochen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 size_t	ft_strlen(char *s)
 {

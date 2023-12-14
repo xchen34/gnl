@@ -17,10 +17,8 @@ int main(int argc, char **argv)
             printf("open error");
             return (1);
         }
-        printf("je suis la argc == 2\n");
         while ((line = get_next_line(fd)) != NULL)
         {
-            printf("je suis a l interieur de print gnl\n");
             printf("%s", line);
             free(line);
         }
@@ -33,7 +31,6 @@ int main(int argc, char **argv)
         fd = STDIN_FILENO;
         while ((line = get_next_line(fd)) != NULL)
         {
-             printf("je suis la argc==1\n");
             printf("%s", line);
             free(line);
         }

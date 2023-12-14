@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: leochen <leochen@student.42.fr>            +#+  +:+       +#+        */
+/*   By: leochen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/07 12:06:13 by leochen           #+#    #+#             */
-/*   Updated: 2023/12/14 17:32:29 by leochen          ###   ########.fr       */
+/*   Created: 2023/12/14 17:01:15 by leochen           #+#    #+#             */
+/*   Updated: 2023/12/14 17:36:09 by leochen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*read_and_add(int fd, char *stock)
 {
@@ -93,14 +93,14 @@ char	*clean_extracted_stock(char *stock)
 char	*get_next_line(int fd)
 {
 	char		*line;
-	static char	*stock;
+	static char	*stock[FD_MAX];
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd >= FD_MAX)
 		return (NULL);
-	stock = read_and_add(fd, stock);
-	if (stock == NULL)
+	stock[fd] = read_and_add(fd, stock[fd]);
+	if (stock[fd] == NULL)
 		return (NULL);
-	line = extract_from_stock(stock);
-	stock = clean_extracted_stock(stock);
+	line = extract_from_stock(stock[fd]);
+	stock[fd] = clean_extracted_stock(stock[fd]);
 	return (line);
 }
